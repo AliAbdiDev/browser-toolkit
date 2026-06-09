@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "toolls",
+  "description": "Use in deepseek",
+  "options_ui": {
+    "page": "src/pages/options/index.html"
+  },
+  "action": {
+    "default_popup": "src/pages/popup/index.html"
+  },
+  
+  "permissions": ["tabs", "activeTab", "storage","contextMenus" ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ijuasdifjuisdajfi",
+      "strict_min_version": "109.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "js": ["src/pages/content/index.tsx"],
+      "css": ["contentStyle.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "src/pages/background/index.js"
+  },
+ "web_accessible_resources": [
+  {
+    "resources": ["contentStyle.css"],
+    "matches": ["<all_urls>"]
+  }
+]
+}

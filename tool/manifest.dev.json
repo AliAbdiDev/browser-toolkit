@@ -1,0 +1,30 @@
+{
+  "name": "tools",
+  "action": {
+    "default_icon": "public/dev-icon-32.png",
+    "default_popup": "src/pages/popup/index.html"
+  },
+  "icons": {
+    "128": "public/dev-icon-128.png"
+  },
+   "background": {
+    "service_worker": "src/pages/background/index.js"
+  },
+    "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "js": ["src/pages/content/index.tsx"],
+      "css": ["contentStyle.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "contentStyle.css",
+        "dev-icon-128.png",
+        "dev-icon-32.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

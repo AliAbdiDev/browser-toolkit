@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "dev:front": "cd auto-fill && pnpm run dev",
+        "dev:back": "cd next-back && pnpm run dev"
+    },
+    "dependencies": {
+        "webextension-polyfill": "^0.12.0"
+    }
+}
