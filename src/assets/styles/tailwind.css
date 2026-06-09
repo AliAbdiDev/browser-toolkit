@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f0f0f0; 
+  --primary-foreground: #0d0d0d; 
+  --muted-foreground: #5e5e5e; 
+  --error: #f71b1b;
+}
+
+@theme inline {
+  --color-background: var(--background); 
+  --color-primary-foreground: var(--primary-foreground); 
+  --color-muted-foreground: var(--muted-foreground); 
+  --color-error: var(--error);
+  --animate-spin-slow: spin 20s linear infinite;
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* استایل‌های اضافی (اختیاری) */
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary-foreground);
+}
+
+/* کلاس‌های سفارشی اضافی (اگر نیاز به چیزی فراتر از utilities دارید) */
+.bg-custom {
+  background-color: var(--color-background);
+}
+
+.text-custom {
+  color: var(--color-primary-foreground);
+}
